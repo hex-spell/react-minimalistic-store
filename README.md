@@ -149,13 +149,13 @@ const App: React.FC = () => {
       <input
         placeholder="username"
         onChange={(e) => {
-          setState({ user: { username: e.target.value } });
+          setUserData({ user: { username: e.target.value } });
         }}
       />
       <input
         placeholder="profilePicture"
         onChange={(e) => {
-          setState({ user: { profilePicture: e.target.value } });
+          setUserData({ user: { profilePicture: e.target.value } });
         }}
       />
     </div>
