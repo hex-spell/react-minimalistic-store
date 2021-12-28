@@ -14,7 +14,7 @@ Run `npm install react-minimalistic-store` to install.
 // Store creation
 const {
   StoreProvider,
-  useStore: { store, setState },
+  useStore,
 } = createStore<StoreType>(initialState);
 
 // State mutation
@@ -77,6 +77,9 @@ const state = {
     name: "Agus",
   },
 };
+
+// Get state
+const { store, setState } = useStore();
 ```
 
 ## Code example
