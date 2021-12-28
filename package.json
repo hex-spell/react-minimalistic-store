@@ -1,8 +1,8 @@
 {
   "name": "react-minimalistic-store",
-  "version": "1.0.1",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "1.0.2",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "license": "MIT",
   "devDependencies": {
     "@types/lodash": "^4.14.178",
