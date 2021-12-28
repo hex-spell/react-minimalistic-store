@@ -4,7 +4,7 @@ import _ from "lodash";
 type SetStateFunc<T> = (
   newState: Partial<T>,
   config?: {
-    mergeStrategy: "shallow" | "deep";
+    mergeStrategy: "shallow" | "deep" | "replace";
   }
 ) => {};
 type StoreContext<T> = { store: T; setState: SetStateFunc<T> };
@@ -26,8 +26,23 @@ export default function createStore<T>(initialState: T): {
       newState: Partial<T>,
       { mergeStrategy } = { mergeStrategy: "deep" }
     ) => {
-      if (mergeStrategy === "deep") setStore(_.merge(newState, store));
-      else if (mergeStrategy === "shallow") setStore({ ...store, ...newState });
+      switch (mergeStrategy) {
+        case "deep": {
+          setStore(_.merge(newState, store));
+          break;
+        }
+        case "shallow": {
+          setStore({ ...store, ...newState });
+          break;
+        }
+        case "replace": {
+          setStore({ ...newState } as T);
+          break;
+        }
+        default: {
+          throw new Error(`merge strategy "${mergeStrategy}" not supported`);
+        }
+      }
 
       return {};
     };

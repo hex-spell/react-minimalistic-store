@@ -3,6 +3,7 @@
 ## Simple wrapper for Context API, avoid boilerplate and repetition
 
 ## Get Started
+
 Run `npm install react-minimalistic-store` to install.
 
 ## Syntax
@@ -17,10 +18,15 @@ const {
 } = createStore<StoreInterface>(initialState);
 
 // State mutation
-// mergeStrategy is "deep" by default
+/*
+ mergeStrategy is "deep" by default
+ the "replace" merge strategy overwrites the entire state,
+ only use it if every property of your state is optional
+*/
+
 function setState(
   newState: Partial<Store>,
-  config: { mergeStrategy: "deep" | "shallow" }
+  config: { mergeStrategy: "deep" | "shallow" | "replace" }
 );
 
 /*
@@ -57,9 +63,9 @@ const state = {
 };
 
 /*
-    if you want to overwrite an entire property without merging it to its previous state
-    (that would happen if the new state doesn't have properties that the previous did)
-    then you can change the merge strategy:
+ if you want to overwrite an entire property without merging it to its previous state
+ (that would happen if the new state doesn't have properties that the previous did)
+ then you can change the merge strategy:
 */
 // "shallow" overwrites properties using a js spread, "deep" does a lodash deep merge
 setState({ user: { name: "Agus" } }, { mergeStrategy: "shallow" });

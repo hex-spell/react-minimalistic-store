@@ -1,6 +1,6 @@
 import React from "react";
 declare type SetStateFunc<T> = (newState: Partial<T>, config?: {
-    mergeStrategy: "shallow" | "deep";
+    mergeStrategy: "shallow" | "deep" | "replace";
 }) => {};
 declare type StoreContext<T> = {
     store: T;
