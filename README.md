@@ -17,19 +17,21 @@ const {
   useStore,
 } = createStore<StoreType>(initialState);
 
-// State mutation
-/*
- mergeStrategy is "deep" by default
- the "replace" merge strategy overwrites the entire state,
- only use it if every property of your state is optional
-*/
 
+// Get state
+const { store, setState } = useStore();
+
+
+// State mutation
 function setState(
   newState: Partial<StoreType>,
   config: { mergeStrategy: "deep" | "shallow" | "replace" }
 );
-
 /*
+ mergeStrategy is "deep" by default
+ the "replace" merge strategy overwrites the entire state,
+ only use it if every property of your state is optional
+
  newState would be partial of the store state
  for example, if your store looks like this:
 */
@@ -77,9 +79,6 @@ const state = {
     name: "Agus",
   },
 };
-
-// Get state
-const { store, setState } = useStore();
 ```
 
 ## Code example
