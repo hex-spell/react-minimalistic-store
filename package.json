@@ -4,6 +4,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
+    "@types/lodash": "^4.14.178",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "react": "^17.0.2",
@@ -13,5 +14,8 @@
   "scripts": {
     "build": "rm -rf ./lib && tsc",
     "prepare": "npm run build"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
