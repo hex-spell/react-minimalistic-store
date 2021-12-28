@@ -15,7 +15,7 @@ Run `npm install react-minimalistic-store` to install.
 const {
   StoreProvider,
   useStore: { store, setState },
-} = createStore<StoreInterface>(initialState);
+} = createStore<StoreType>(initialState);
 
 // State mutation
 /*
@@ -25,7 +25,7 @@ const {
 */
 
 function setState(
-  newState: Partial<Store>,
+  newState: Partial<StoreType>,
   config: { mergeStrategy: "deep" | "shallow" | "replace" }
 );
 
