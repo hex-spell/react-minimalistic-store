@@ -22,7 +22,7 @@ export default function createStore<T>(initialState: T): {
   const StoreProvider: React.FC = ({ children }) => {
     const [store, setStore] = useState(initialState);
 
-    //TODO: check if these merge and spread cause rerenders
+    //TODO: check if these merge and spread operations cause rerenders
     const setState = (
       newState: Partial<T>,
       { mergeStrategy } = { mergeStrategy: "deep" }
