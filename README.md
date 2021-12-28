@@ -2,7 +2,6 @@
 
 ## Simple wrapper for Context API, avoid boilerplate and repetition
 
----
 ## Get Started
 Run `npm install react-minimalistic-store` to install.
 
