@@ -1,4 +1,3 @@
-// we need a provider, a context and a state. return type automatically if possible.
 import React, { createContext, useContext, useMemo, useState } from "react";
 import _ from "lodash";
 
