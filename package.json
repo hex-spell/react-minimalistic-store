@@ -1,9 +1,16 @@
 {
   "name": "react-minimalistic-store",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "state-management",
+    "context",
+    "context-api",
+    "typescript"
+  ],
   "devDependencies": {
     "@types/lodash": "^4.14.178",
     "@types/react": "^17.0.38",
