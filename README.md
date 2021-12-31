@@ -1,6 +1,6 @@
 # react-minimalistic-store
 
-## Simple wrapper for Context API, avoid boilerplate and repetition
+## Simple wrapper for Context API, prevent boilerplate and repetition
 
 ## Get Started
 
